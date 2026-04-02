@@ -7,15 +7,20 @@ export default function LibraryPage() {
       {/* 1. Header Area */}
       <header className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
         <div>
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="group mb-4 flex items-center gap-2 text-sm text-zinc-500 hover:text-blue-500"
           >
-            <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" />
+            <ArrowLeft
+              size={16}
+              className="transition-transform group-hover:-translate-x-1"
+            />
             Back to Home
           </Link>
           <h1 className="text-4xl font-bold">Technique Library</h1>
-          <p className="text-zinc-400">Master your fundamentals and advanced flows.</p>
+          <p className="text-zinc-400">
+            Master your fundamentals and advanced flows.
+          </p>
         </div>
 
         <button className="rounded-md bg-zinc-800 px-4 py-2 text-sm font-medium hover:bg-zinc-700">
