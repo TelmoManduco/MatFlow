@@ -10,7 +10,7 @@ export default function VideoWatchPage() {
     {
       id: 1,
       title: "Basic Hip Escape (Backward)",
-      youtubeId: "v_mR_V36H8g",
+      youtubeId: "ifW5IXMzNNs",
       duration: "2:15",
     },
     {
@@ -35,7 +35,7 @@ export default function VideoWatchPage() {
       <div className="max-w-7xl mx-auto">
         {/* Navigation */}
         <Link
-          href="/library/white-belt/solo-drills"
+          href="/library/white-belt"
           className="flex items-center gap-2 text-zinc-500 hover:text-white mb-6"
         >
           <ArrowLeft size={16} /> Back to Solo Drills

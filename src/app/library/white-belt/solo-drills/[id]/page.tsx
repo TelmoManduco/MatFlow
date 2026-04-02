@@ -32,9 +32,12 @@ export default function VideoWatchPage({ params }: { params: { id: string } }) {
         <div className="aspect-video w-full rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 shadow-2xl">
           <iframe
             className="w-full h-full"
-            src={`https://www.youtube.com/embed/${videoData.youtubeId}`}
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            /* I used videoData.youtubeId here to match your variable name */
+            /* AND I made sure there is NO ?autoplay=1 at the end */
+            src={`https://www.youtube.com/embed/${videoData.youtubeId}?autoplay=0&controls=1`}
+            title={videoData.title}
+            loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
         </div>
