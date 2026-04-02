@@ -1,5 +1,12 @@
 import Link from "next/link";
-import { ArrowLeft, Shield, FastForward, Move, Target, Repeat } from "lucide-react";
+import {
+  ArrowLeft,
+  Shield,
+  FastForward,
+  Move,
+  Target,
+  Repeat,
+} from "lucide-react";
 
 export default function WhiteBeltPage() {
   const categories = [
@@ -54,23 +61,47 @@ export default function WhiteBeltPage() {
         </header>
 
         {/* 2. Category Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {categories.map((item) => (
-            <button
-              key={item.title}
-              className="flex items-start gap-5 p-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 hover:bg-zinc-800 hover:border-zinc-700 transition-all text-left"
-            >
-              <div className="p-3 bg-zinc-800 rounded-lg text-blue-500">
-                {item.icon}
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white">
-                  {item.title}
-                </h3>
-                <p className="text-zinc-400 mt-1">{item.desc}</p>
-              </div>
-            </button>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {categories.map((item) => {
+            // 1. We check if the title is our Solo Drills category
+            const isSoloDrills = item.title === "Solo Drills & Fundamentals";
+
+            // 2. If it is Solo Drills, use a Link. If not, stay as a button.
+            return isSoloDrills ? (
+              <Link
+                key={item.title}
+                href="/library/white-belt/solo-drills"
+                className="flex items-start gap-5 p-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 hover:bg-zinc-800 hover:border-zinc-700 transition-all text-left"
+              >
+                <div className="p-3 bg-zinc-800 rounded-lg text-blue-500">
+                  {item.icon}
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-zinc-400 mt-1">{item.desc}</p>
+                </div>
+              </Link>
+            ) : (
+              <button
+                key={item.title}
+                className="flex items-start gap-5 p-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 hover:bg-zinc-800 hover:border-zinc-700 transition-all text-left opacity-50 cursor-not-allowed"
+              >
+                <div className="p-3 bg-zinc-800 rounded-lg text-blue-500">
+                  {item.icon}
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-zinc-400 mt-1">
+                    {item.desc} (Coming Soon)
+                  </p>
+                </div>
+              </button>
+            );
+          })}
         </div>
       </div>
     </main>
